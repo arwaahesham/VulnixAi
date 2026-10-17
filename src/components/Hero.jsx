@@ -8,6 +8,7 @@ import {
   Puzzle,
   Sparkles,
 } from 'lucide-react';
+import { HackerBackground } from './HackerBackground';
 
 const features = [
   {
@@ -166,18 +167,33 @@ export default function Hero({ onStartFree, onExploreFeatures }) {
       id="home"
       className="relative isolate overflow-hidden bg-transparent px-4 pb-3 pt-20 text-white sm:px-6 sm:pb-4 sm:pt-24 lg:pb-[90px]"
     >
-      {/* Background effects */}
+      {/* Background effects with Hacker Matrix Rain */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
       >
+        <HackerBackground
+          color="#ef4444"
+          highlightColor="#ffffff"
+          fontSize={13}
+          speed={0.85}
+          fadeAlpha={0.06}
+          className="opacity-55"
+        />
+
+        {/* Subtle grid pattern overlay */}
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.025)_1px,transparent_1px)] [background-size:28px_28px]" />
 
-        <div className="absolute inset-y-0 left-0 w-[30%] bg-[radial-gradient(ellipse_at_left,rgba(200,25,35,0.25),transparent_70%)]" />
+        {/* Ambient red cyber glows on sides */}
+        <div className="absolute inset-y-0 left-0 w-[35%] bg-[radial-gradient(ellipse_at_left,rgba(200,25,35,0.25),transparent_70%)]" />
+        <div className="absolute inset-y-0 right-0 w-[35%] bg-[radial-gradient(ellipse_at_right,rgba(200,25,35,0.25),transparent_70%)]" />
 
-        <div className="absolute inset-y-0 right-0 w-[30%] bg-[radial-gradient(ellipse_at_right,rgba(200,25,35,0.25),transparent_70%)]" />
+        {/* Center radial vignette keeping typography & planet focal and high-contrast */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,rgba(5,5,8,0.75)_85%)]" />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+        {/* Smooth top and bottom gradients */}
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#050505] via-[#050505]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/70" />
       </div>
 
       <div className="relative mx-auto max-w-[1280px]">
@@ -227,7 +243,7 @@ export default function Hero({ onStartFree, onExploreFeatures }) {
         </motion.div>
 
         {/* Globe + Feature Cards */}
-        <div className="relative isolate mt-3 min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]">
+        <div className="relative mt-3 min-h-[350px] sm:min-h-[400px] lg:min-h-[500px]">
           {/* Ambient glow */}
           <div
             aria-hidden="true"
@@ -277,15 +293,14 @@ export default function Hero({ onStartFree, onExploreFeatures }) {
                 aria-label="Animated red planet"
                 className="block h-auto w-full select-none mix-blend-screen"
               >
-                 <source
-                  src="/hero-bg.mp4"
-                  type="video/mp4"
-                />
                 <source
                   src="/planet-transparent.webm"
                   type="video/webm"
                 />
-               
+                <source
+                  src="/hero-bg.mp4"
+                  type="video/mp4"
+                />
               </video>
             </motion.div>
 
