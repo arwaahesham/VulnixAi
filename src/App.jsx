@@ -9,7 +9,6 @@ import Footer from './components/Footer';
 import SignInModal from './components/SignInModal';
 import { HackerBackground } from './components/HackerBackground';
 import Loader from './components/Loader';
-import { Play } from 'lucide-react';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);

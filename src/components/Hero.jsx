@@ -277,14 +277,15 @@ export default function Hero({ onStartFree, onExploreFeatures }) {
                 aria-label="Animated red planet"
                 className="block h-auto w-full select-none mix-blend-screen"
               >
+                 <source
+                  src="/hero-bg.mp4"
+                  type="video/mp4"
+                />
                 <source
                   src="/planet-transparent.webm"
                   type="video/webm"
                 />
-                <source
-                  src="/hero-bg.mp4"
-                  type="video/mp4"
-                />
+               
               </video>
             </motion.div>
 
