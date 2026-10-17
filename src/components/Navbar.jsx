@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { ArrowRight, Moon, Menu, X } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/Logo.png';
 
 export default function Navbar({ onOpenSignIn, onOpenStartFree }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
