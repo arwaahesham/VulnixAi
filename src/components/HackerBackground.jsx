@@ -1,21 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 
-/**
- * HackerBackground (Enhanced & Bug-fixed version of EldoraUI Hacker Background)
- *
- * Fixes included:
- * 1. High-DPI / Retina display crisp rendering (no blurry characters).
- * 2. Proper container bounds & ResizeObserver (doesn't assume window.innerWidth).
- * 3. Dynamic columns recalculation on resize (prevents blank canvas gaps).
- * 4. Battery / GPU saver: auto-pauses when tab is hidden or element is off-screen.
- * 5. Customizable head character highlight (classic Matrix/cyber rain effect).
- * 6. React 19 / JSX compatibility with zero TypeScript lint errors.
- */
 export const HackerBackground = ({
   color = '#ef4444',
   highlightColor = '#f00a02ff',
   fontSize = 14,
-  speed = 1,
+  speed = 0.5,
   className = '',
   fadeAlpha = 5,
   fps = 30,

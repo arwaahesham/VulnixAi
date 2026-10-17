@@ -8,8 +8,11 @@ import StartForFree from './components/StartForFree';
 import Footer from './components/Footer';
 import SignInModal from './components/SignInModal';
 import { HackerBackground } from './components/HackerBackground';
+import Loader from './components/Loader';
+import { Play } from 'lucide-react';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [signInOpen, setSignInOpen] = useState(false);
   const [signInTab, setSignInTab] = useState('signin');
 
@@ -28,6 +31,10 @@ export default function App() {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleReplayLoader = () => {
+    setIsLoading(true);
   };
 
   return (
@@ -50,6 +57,7 @@ export default function App() {
       <Navbar 
         onOpenSignIn={handleOpenSignIn}
         onOpenStartFree={handleOpenStartFree}
+        onReplayLoader={handleReplayLoader}
       />
 
       {/* Hero Section matching the photo */}
@@ -88,6 +96,18 @@ export default function App() {
         initialTab={signInTab}
         onClose={() => setSignInOpen(false)}
       />
+
+      {/* Floating System Loader Trigger for quick testing */}
+      
+
+      {/* Vulnix Fullscreen Cyber Security Loader */}
+      {isLoading && (
+        <Loader 
+          onComplete={() => setIsLoading(false)}
+          duration={2400}
+          showSkip={true}
+        />
+      )}
     </div>
   );
 }
