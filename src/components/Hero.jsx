@@ -264,7 +264,7 @@ export default function Hero({ onStartFree, onExploreFeatures }) {
           </div>
 
           {/* Planet video */}
-          <div className="pointer-events-none absolute left-1/2 top-[50%] z-0 w-[150%] -translate-x-[49.3%] -translate-y-[70%] lg:top-[80%] lg:w-[1500px]">
+          <div className="pointer-events-none absolute left-1/2 top-[50%] z-0 w-[150%] -translate-x-[49.3%] -translate-y-[70%] lg:top-[80%] lg:w-[1000px]">
             <motion.div
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{
